@@ -1,0 +1,267 @@
+/* Reset base */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    line-height: 1.6;
+    color: #333;
+    background-color: #ffffff;
+}
+
+header {
+    background-color: #007aaa; /* Azzurro intenso */
+    color: white;
+    padding: 1rem 0;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+}
+
+.main-menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0 auto; /* Centratura automatica */
+    padding: 0;
+    position: relative; /* Contesto per z-index */
+    z-index: 1; /* Sopra altri elementi */
+}
+
+.main-menu li {
+    margin: 0 15px;
+}
+
+.main-menu a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+    padding: 8px 15px;
+    border-radius: 20px;
+    transition: all 0.3s ease;
+}
+
+.main-menu a:hover {
+    background-color: #ffd700; /* Giallo oro */
+    color: #333;
+    transform: translateY(-2px);
+}
+
+.main-menu a:active {
+    background-color: #ffc600; /* Giallo più intenso */
+}
+
+.content {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 20px;
+    background-color: #f8f9fa; /* Azzurro molto chiaro/bianco sporco */
+    border-radius: 8px;
+    box-shadow: 0 0 15px rgba(0, 168, 232, 0.1);
+}
+
+.content h1 {
+    color: #0077b6; /* Azzurro scuro */
+    border-bottom: 2px solid #ffd700; /* Giallo oro */
+    padding-bottom: 10px;
+    margin-bottom: 20px;
+}
+
+.highlight {
+    background-color: #ffd700; /* Giallo oro */
+    padding: 2px 5px;
+    border-radius: 3px;
+}
+
+.button {
+    display: inline-block;
+    background-color: #007aaa; /* Azzurro intenso */
+    color: white;
+    padding: 10px 20px;
+    border-radius: 20px;
+    text-decoration: none;
+    font-weight: bold;
+    transition: all 0.3s ease;
+    border: none;
+    cursor: pointer;
+}
+
+.button:hover {
+    background-color: #ffd700; /* Giallo oro */
+    color: #333;
+    transform: translateY(-2px);
+}
+
+footer {
+    background-color: #007aaa; /* Azzurro intenso */
+    color: white;
+    text-align: center;
+    padding: 1.5rem 0;
+    position: fixed;
+    z-index: 2;
+    bottom: 0;
+    width: 100%;
+}
+
+/* Stile per gli elementi importanti */
+.important {
+    color: #ffd700; /* Giallo-arancio */
+    font-weight: bold;
+    font-size: 22px
+}
+
+/* Effetti hover per le card */
+.card {
+    background: white;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 10px rgba(0, 168, 232, 0.1);
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 15px rgba(0, 168, 232, 0.2);
+}
+
+.card h2 {
+    color: #0077b6; /* Azzurro scuro */
+}
+
+.main-menu {
+    display: flex;
+    justify-content: space-between; /* Separa logo e nav */
+    align-items: center;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    position: relative; /* Per posizionamento assoluto del logo */
+}
+
+.logo-name {
+    color: #ffd700;
+    font-weight: bold;
+    font-size: 1.2rem;
+    position: absolute; /* Togliamo dal flusso normale */
+    left: 20px; /* Posizione a sinistra */
+    padding: 10px 0;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.2);
+}
+
+h2{
+    color: #ffd700;
+}
+
+/* Stile per la timeline */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 40px auto;
+    padding: 0 20px 60px; /* Aggiunto padding sotto */
+    z-index: 1; /* Stessa priorità del main */
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    width: 4px;
+    background-color: #0087c1;
+    top: 0;
+    bottom: 0;
+    left: 50%;
+    margin-left: -2px;
+    border-radius: 2px;
+}
+
+.timeline-item {
+    padding: 20px 0;
+    position: relative;
+}
+
+.timeline-year {
+    width: 100px;
+    background-color: #ffd700;
+    color: #333;
+    text-align: center;
+    font-weight: bold;
+    padding: 8px;
+    border-radius: 20px;
+    margin: 0 auto 20px;
+    position: relative;
+    z-index: 1;
+}
+
+.timeline-content {
+    background-color: white;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 3px 10px rgba(0,0,0,0.1);
+    margin-bottom: 20px;
+    position: relative;
+}
+
+.timeline-content h3 {
+    color: #0087c1;
+    margin-top: 0;
+}
+
+.timeline-content p {
+    margin-bottom: 15px;
+}
+
+/* Responsive per schermi piccoli */
+@media (max-width: 768px) {
+    .timeline::before {
+        left: 30px;
+    }
+    
+    .timeline-year {
+        margin-left: 0;
+        text-align: left;
+        width: auto;
+        display: inline-block;
+        padding: 8px 15px;
+    }
+    
+    .timeline-content {
+        margin-left: 60px;
+    }
+}
+
+main {
+    padding-bottom: 100px; /* Deve essere maggiore dell'altezza del footer */
+    position: relative; /* Crea un nuovo contesto di stacking */
+    z-index: 1; /* Assicura che il main stia sopra al footer */
+}
+
+/*timeline migliorata*/
+.timeline-content {
+    /* Mantieni le tue proprietà esistenti e aggiungi: */
+    transition: all 0.3s ease;
+    transform-origin: center;
+    border-left: 4px solid #ffd700;
+}
+
+.timeline-content:hover {
+    transform: scale(1.03); /* Leggero ingrandimento */
+    box-shadow: 0 5px 15px rgba(0, 168, 232, 0.3); /* Effetto luce */
+    background-color: #f8f9fa; /* Cambio colore di sfondo */
+    border-left: 4px solid #ffd700; /* Bordo giallo a sinistra */
+}
+
+/* Se vuoi un effetto più marcato */
+.timeline-item:hover .timeline-content {
+    transform: scale(1.05);
+    box-shadow: 0 8px 25px rgba(0, 168, 232, 0.4);
+}
+
+.timeline-item:hover .timeline-year {
+    background-color: #ffc107; /* Giallo più acceso */
+    transform: scale(1.1);
+}
+
+.timeline-year {
+    transition: all 0.3s ease;
+}
+

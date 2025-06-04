@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Dublino - Il mio sito</title>
+    <link rel="stylesheet" href="css/style.css">
+    <style>
+        .photo-gallery {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            margin: 30px 0;
+            gap: 20px;
+        }
+        
+        .photo-frame {
+            flex: 1 1 300px;
+            max-width: 100%;
+            height: 250px;
+            border-radius: 10px;
+            overflow: hidden;
+            transition: all 0.3s ease;
+            cursor: pointer;
+            position: relative;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+        
+        .photo-frame:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 6px 12px rgba(0, 122, 170, 0.2);
+        }
+        
+        .photo-frame img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s ease;
+        }
+        
+        .photo-frame:hover img {
+            transform: scale(1.05);
+        }
+        
+        /* Modal Fullscreen */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 100;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0, 0, 0, 0.9);
+            overflow: auto;
+            animation: fadeIn 0.3s;
+        }
+        
+        .modal-content {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100%;
+            padding: 20px;
+        }
+        
+        .modal-img {
+            max-width: 90%;
+            max-height: 90%;
+            object-fit: contain;
+        }
+        
+        .close {
+            position: absolute;
+            top: 20px;
+            right: 30px;
+            color: #fff;
+            font-size: 40px;
+            font-weight: bold;
+            cursor: pointer;
+        }
+        
+        @keyframes fadeIn {
+            from {opacity: 0;}
+            to {opacity: 1;}
+        }
+        
+        .experience-card {
+            background: linear-gradient(135deg, #f8fcff 0%, #e6f4ff 100%);
+            padding: 25px;
+            border-radius: 15px;
+            margin-bottom: 30px;
+            border-left: 5px solid #ffd700;
+        }
+        
+        .highlight-point {
+            display: flex;
+            align-items: flex-start;
+            margin-bottom: 15px;
+        }
+        
+        .emoji-icon {
+            font-size: 1.5rem;
+            margin-right: 15px;
+            flex-shrink: 0;
+        }
+        
+        .point-text {
+            color: #0077b6;
+            font-size: 1.1rem;
+        }
+        
+        .irish-theme {
+            color: #169b62; /* Verde irlandese */
+            font-weight: bold;
+        }
+    </style>
+</head>
+<body>
+    <header>
+        <nav class="main-menu">
+            <div class="logo-name">Elian Morgan Nanni</div>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="mast.html">Mast</a></li>
+                <li><a href="cna.html">CNA</a></li>
+                <li><a href="unipol.html">Unipol</a></li>
+                <li><a href="cambridge.html">Cambridge</a></li>
+                <li><a href="dublino.html">Dublino</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <section class="content">
+            <h1>Viaggio a <span class="highlight">Dublino</span> 🇮🇪🍀</h1>
+            
+            <div class="experience-card">
+                <h2 style="color: #0077b6; margin-bottom: 25px; border-bottom: 2px solid #ffd700; padding-bottom: 10px;">✈️ Esperienza Irlandese</h2>
+                
+                <div class="highlight-point">
+                    <div class="emoji-icon">🏠</div>
+                    <div class="point-text">
+                        <strong>Soggiorno in famiglia:</strong> Come a Cambridge, ho vissuto con una famiglia locale, immergendomi nella cultura irlandese
+                    </div>
+                </div>
+                
+                <div class="highlight-point">
+                    <div class="emoji-icon">🏫</div>
+                    <div class="point-text">
+                        <strong>Scuola di inglese:</strong> Lezioni quotidiane con insegnanti madrelingua per perfezionare la lingua
+                    </div>
+                </div>
+                
+                <div class="highlight-point">
+                    <div class="emoji-icon">🌊</div>
+                    <div class="point-text">
+                        <strong>Cliffs of Moher:</strong> Escursione mozzafiato alla famosa scogliera, uno dei paesaggi più iconici d'Irlanda
+                    </div>
+                </div>
+                
+                <div class="highlight-point">
+                    <div class="emoji-icon">🍺</div>
+                    <div class="point-text">
+                        <strong>Guinness Storehouse:</strong> Tour nel tempio della birra più famosa d'Irlanda, con vista panoramica su Dublino
+                    </div>
+                </div>
+                
+                <div class="highlight-point">
+                    <div class="emoji-icon">⚓</div>
+                    <div class="point-text">
+                        <strong>Howth:</strong> Giornata al pittoresco porticciolo, tra mercato del pesce e sentieri costieri
+                    </div>
+                </div>
+
+                <div class="highlight-point">
+                    <div class="emoji-icon">🍲</div>
+                    <div class="point-text">
+                        <strong>Irish Stew:</strong> Cena finale con il piatto tradizionale irlandese, a base di carne e patate
+                    </div>
+                </div>
+
+                <div class="highlight-point">
+                    <div class="emoji-icon">👩‍🏫</div>
+                    <div class="point-text">
+                        <strong>Professoresse:</strong> Ad accompagnarci lungo questo viaggio sono state la professoressa Rebecchi e la professoressa Sambi
+                    </div>
+                </div>
+            </div>
+            
+            <h3 style="color: #0077b6; margin: 30px 0 15px; text-align: center;">📸 Galleria Foto</h3>
+            
+            <div class="photo-gallery">
+                <div class="photo-frame" onclick="openModal('images/Moher.jpg')">
+                    <img src="images/Moher.jpg" alt="Cliffs of Moher">
+                </div>
+                <div class="photo-frame" onclick="openModal('images/Guinnes_storehouse.png')">
+                    <img src="images/Guinnes_storehouse.png" alt="Guinness Storehouse">
+                </div>
+                <div class="photo-frame" onclick="openModal('images/Howth.jpg')">
+                    <img src="images/Howth.jpg" alt="Porto di Howth">
+                </div>
+            </div>
+            
+            <!-- Modal Fullscreen -->
+            <div id="myModal" class="modal">
+                <span class="close" onclick="closeModal()">&times;</span>
+                <div class="modal-content">
+                    <img id="modalImg" class="modal-img" src="" alt="">
+                </div>
+            </div>
+            
+            <div style="text-align: center; margin-top: 20px;">
+                <p style="color: #007aaa; font-style: italic;">
+                    "Un'avventura irlandese che ha arricchito il mio inglese e mi ha fatto scoprire paesaggi indimenticabili"
+                </p>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2025 Il mio sito.</p>
+    </footer>
+
+    <script>
+        // Funzioni per il modal
+        function openModal(src) {
+            const modal = document.getElementById('myModal');
+            const modalImg = document.getElementById('modalImg');
+            modal.style.display = "block";
+            modalImg.src = src;
+        }
+        
+        function closeModal() {
+            document.getElementById('myModal').style.display = "none";
+        }
+        
+        // Chiudi il modal cliccando fuori dall'immagine
+        window.onclick = function(event) {
+            const modal = document.getElementById('myModal');
+            if (event.target == modal) {
+                closeModal();
+            }
+        }
+    </script>
+</body>
+</html>
